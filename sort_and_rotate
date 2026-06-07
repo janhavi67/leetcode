@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+bool sort_and_check(int arr[],int n){
+    int count_drop =0;
+
+    for(int i=0;i<n;i++){
+        if(arr[i]>arr[(i+1)%n]){
+            count_drop++;
+        }
+    }
+    return count_drop <=1;
+}
+int main(){
+    int n;
+    cout<<"enter the size of array : ";
+    cin>>n;
+    int arr[n];
+    for(int i = 0;i<n;i++){
+        cout<<"enter "<<i+1<<" element of array : ";
+        cin>>arr[i];
+    }
+    if (sort_and_check(arr,n)){
+        cout<<"True";
+    }
+    else{
+        cout<<"False";
+    }
+}
